@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang=es-ES>
+    <head>
+        <title>Comandos Linux</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, userscalable=no">
+        <link rel="stylesheet" type="text/css" href="estilo.css">
+        <script type="text/javascript" src="scripts.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Comandos Linux</h1>
+        </header>
+
+        <button onclick="colapsarTodo()">Expandir/colapsar todo</button>
+        <p>
+            Para buscar utiliza la herramienta de búsqueda integrada en tu
+            navegador (Ctrl+F), puede ser útil expandir todo antes.
+        </p>
+        <p>
+            Las palabras entre llaves <strong>{}</strong> deben ser reemplazadas sin
+            llaves. Las palabras entre corchetes <strong>[]</strong> son opcionales,
+            van sin corchetes.
+        </p>
+        
+        <!-- Contenido -->
+<main id="playground">
+<section>
+    <h2 onclick="colapsar(this)">Básico</h2>
+    <ul>
+        <li>
+            <strong class="codigo">cd {dir}</strong>
+            Moverse a directorio
+        </li>
+        <li>
+            <strong class="codigo">cd ..</strong>
+            Moverse a directorio anterior
+        </li>
+        <li>
+            <strong class="codigo">cd</strong>
+            Moverse al home
+        </li>
+        <li>
+            <strong class="codigo">ls [-lah]</strong>
+            Mostrar archivos en directorio actual
+        </li>
+        <li>
+            <strong class="codigo">mkdir {nombredir}</strong>
+            Crear carpeta
+        </li>
+        <li>
+            <strong class="codigo">rm {archivo}</strong>
+            Borrar <em>{archivo}</em>
+        </li>
+        <li>
+            <strong class="codigo">rm -r {dir}</strong>
+            Borrar carpeta <em>{dir}</em>
+        </li>
+        <li>
+            <strong class="codigo">cp {archivo} {archivo2}</strong>
+            Copiar <em>{archivo}</em> a <em>{archivo2}</em>
+        </li>
+        <li>
+            <strong class="codigo">cp -r {dir} {dir2}</strong>
+            Copiar <em>{dir}</em> a <em>{dir2}</em>
+        </li>
+        <li>
+            <strong class="codigo">mv {archivo/dir} {archivo2/dir}</strong>
+            Mover archivo o carpeta
+        </li>
+        <li>
+            <strong class="codigo">mv {archivo/dir} {archivo2/dir}</strong>
+            Renombrar archivo o carpeta
+        </li>
+        <li>
+            <strong class="codigo">ln -s {archivo} {enlace}</strong>
+            Crear enlace simbólico de <em>{archivo}</em> (Acceso directo)
+        </li>
+        <li>
+            <strong class="codigo">touch {archivo}</strong>
+            Crear archivo
+        </li>
+        <li>
+            <strong class="codigo">cat {archivo}</strong>
+            Ver archivo
+        </li>
+        <li>
+            <strong class="codigo">less {archivo}</strong>
+            Ver archivo cómodamente
+        </li>
+        <li>
+            <strong class="codigo">{comando} | less</strong>
+            Ver salida de comando cómodamente
+        </li>
+        <li>
+            <strong class="codigo">nano {archivo}</strong>
+            Editar archivo
+        </li>
+        <li>
+            <strong class="codigo">sudo {comando}</strong>
+            Ejecutar <em>{comando}</em> como administrador
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 onclick="colapsar(this)">Utilidades</h2>
+    <ul>
+        <li>
+            <strong class="codigo">cal [-3] [-y]</strong>
+            Calendario
+        </li>
+        <li>
+            <strong class="codigo">date</strong>
+            Fecha y Hora
+        </li>
+        <li>
+            <strong class="codigo">man {comando}</strong>
+            Ver el manual del <em>{comando}</em>
+        </li>
+        <li>
+            <strong class="codigo">man -k {texto}</strong>
+            Buscar <em>{texto}</em> en el manual
+        </li>
+        <li>
+            <strong class="codigo">du -ah</strong>
+            Uso de disco por archivo en directorio actual
+        </li>
+        <li>
+            <strong class="codigo">ls -lSrh</strong>
+            Archivos más grandes en directorio actual
+        </li>
+        <li>
+            <strong class="codigo">du -kx | egrep -v "\./.+/" | sort -n</strong>
+            Carpetas más grandes en directorio actual
+        </li>
+        <li>
+            <strong class="codigo">find -name {texto}</strong>
+            Buscar <em>{texto}</em> en el nombre de los archivos, no usar 
+            extensión
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 onclick="colapsar(this)">Sistema</h2>
+    <ul>
+        <li>
+            <strong class="codigo">uname -a</strong>
+            Información de Linux
+        </li>
+        <li>
+            <strong class="codigo">uname -r</strong>
+            Información del Kernel
+        </li>
+        <li>
+            <strong class="codigo">uptime</strong>
+            Tiempo desde inicio de Linux
+        </li>
+        <li>
+            <strong class="codigo">last</strong>
+            Historial de sesión
+        </li>
+        <li>
+            <strong class="codigo">dmesg</strong>
+            Info de hardware y booteo, usar con 
+            <strong class="codigo">less</strong>
+        </li>
+        <li>
+            <strong class="codigo">lscpu</strong>
+            Info de CPU
+        </li>
+        <li>
+            <strong class="codigo">cat /proc/meminfo</strong>
+            Info de memoria
+        </li>
+        <li>
+            <strong class="codigo">lshw</strong>
+            Info de hardware
+        </li>
+        <li>
+            <strong class="codigo">lspci</strong>
+            Info de dispositivos PCI
+        </li>
+        <li>
+            <strong class="codigo">lsusb</strong>
+            Info de USB
+        </li>
+        <li>
+            <strong class="codigo">free -m</strong>
+            RAM libre
+        </li>
+        <li>
+            <strong class="codigo">sudo lsblk [-o
+                NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL]</strong>
+            Mostrar particiones
+        </li>
+        <li>
+            <strong class="codigo">blkid</strong>
+            Mostrar particiones
+        </li>
+        <li>
+            <strong class="codigo">df -h</strong>
+            Mostrar espacio libre
+        </li>
+        <li>
+            <strong class="codigo">mount [-t {sistema de ficheros}] {disp} {dir}
+                </strong>
+            Montar <em>{disp}</em> en el punto de montaje <em>{dir}</em></br>
+            Algunos sistemas de ficheros comunes son <em>ext4</em>, 
+            <em>ntfs</em> o <em>vfat</em> para FAT32
+        </li>
+        <li>
+            <strong class="codigo">mount -o loop {iso} {dir}
+                </strong>
+            Montar un ISO en el punto de montaje <em>{dir}</em>
+        </li>
+        <li>
+            <strong class="codigo">umount {dir/disp}</strong>
+            Desmontar
+        </li>
+        <li>
+            <strong class="codigo">halt</strong>
+            Apagar
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 onclick="colapsar(this)">Paquetes y programas</h2>
+    Para distribuciones basadas en Debian, en otras distribuciones pueden haber
+    diferencias
+    <ul>
+        <li>
+            <strong class="codigo">aptitude install {paquete}</strong>
+            Instalar <em>{paquete}</em>. En algunas distribuciones se
+            debe reemplazar <strong class="codigo">aptitude</strong> por 
+            <strong class="codigo">yum</strong>, 
+            <strong class="codigo">pacman</strong>, etc.</br>
+            Normalmente los programas vienen en paquetes del mismo nombre
+        </li>
+        <li>
+            <strong class="codigo">aptitude remove {paquete}</strong>
+            Eliminar <em>{paquete}</em>
+        </li>
+        <li>
+            <strong class="codigo">aptitude search {texto}</strong>
+            Buscar paquetes en los repositorios
+        </li>
+        <li>
+            <strong class="codigo">aptitude update</strong>
+            Actualizar repositorios
+        </li>
+        <li>
+            <strong class="codigo">aptitude upgrade</strong>
+            Actualizar paquetes
+        </li>
+        <li>
+            <strong class="codigo">dpkg -i {archivo.deb}</strong>
+            Instalar paquetes con extensión .deb
+        </li>
+        <li>
+            <strong class="codigo">dpkg -r {paquete}</strong>
+            Eliminar paquete .deb
+        </li>
+        <li>
+            <strong class="codigo">dpkg -l</strong>
+            Mostrar paquetes instalados
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 onclick="colapsar(this)">Compilar</h2>
+    Seguir instrucciones del readme, si no las hay:
+    <ol>
+        <li>
+            <strong class="codigo">./configure</strong>
+        </li>
+        <li>
+            <strong class="codigo">make</strong>
+        </li>
+        <li>
+            <strong class="codigo">make install</strong>
+        </li>
+    </ol>
+</section>
+
+<section>
+    <h2 onclick="colapsar(this)">Compresión</h2>
+    <ul>
+        <li>
+            <strong class="codigo">tar -zcvf {archivo.tar.gz} {archivos/carpeta}
+                </strong>
+            Comprimir en TAR.GZ
+        </li>
+        <li>
+            <strong class="codigo">tar -ztvf {archivo.tar.gz}</strong>
+            Mostrar contenidos de un TAR.GZ
+        </li>
+        <li>
+            <strong class="codigo">tar -zxvf {archivo.tar.gz}</strong>
+            Descomprimir un TAR.GZ
+        </li>
+        <li>
+            <strong class="codigo">tar -cvf {archivo.tar} {archivos/carpeta}
+                </strong>
+            Comprimir en TAR
+        </li>
+        <li>
+            <strong class="codigo">tar -tvf {archivo.tar}</strong>
+            Mostrar contenidos de un TAR
+        </li>
+        <li>
+            <strong class="codigo">tar -xvf {archivo.tar}</strong>
+            Descomprimir un TAR
+        </li>
+        <li>
+            <strong class="codigo">zip {archivo.zip} {archivos/carpeta}
+                </strong>
+            Comprimir en ZIP
+        </li>
+        <li>
+            <strong class="codigo">unzip -l {archivo.zip}</strong>
+            Mostrar contenidos de un ZIP
+        </li>
+        <li>
+            <strong class="codigo">unzip {archivo.zip}</strong>
+            Descomprimir un ZIP
+        </li>
+        <li>
+            <strong class="codigo">rar a {archivo.rar} {archivos/carpeta}</strong>
+            Comprimir en RAR
+        </li>
+        <li>
+            <strong class="codigo">rar l {archivo.rar}</strong>
+            Mostrar contenidos de un RAR
+        </li>
+        <li>
+            <strong class="codigo">rar x {archivo.rar}</strong>
+            Descomprimir un RAR
+        </li>
+        <li>
+            <strong class="codigo">7z a {archivo.7z} {archivos/carpeta}</strong>
+            Comprimir en 7z
+        </li>
+        <li>
+            <strong class="codigo">7z l {archivo.7z}</strong>
+            Mostrar contenidos de un 7z
+        </li>
+        <li>
+            <strong class="codigo">7z x {archivo.7z}</strong>
+            Descomprimir un 7z
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 onclick="colapsar(this)">Grep</h2>
+    <ul>
+        <li>
+            <strong class="codigo">grep {texto} {archivo}</strong>
+            Buscar <em>{texto}</em> en <em>{archivo}</em>
+        </li>
+        <li>
+            <strong class="codigo">grep -r {texto} {a}</strong>
+            Buscar <em>{texto}</em> en <em>{dir}</em> incluyendo subcarpetas
+        </li>
+        <li>
+            <strong class="codigo">{comando} | grep {texto}</strong>
+            Buscar <em>{texto}</em> en la salida de <em>{comando}</em>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 onclick="colapsar(this)">Usuarios</h2>
+    <ul>
+        <li>
+            <strong class="codigo">adduser {nombre}</strong>
+            Agregar <em>{usuario}</em>
+        </li>
+        <li>
+            <strong class="codigo">deluser {usuario}</strong>
+            Borrar <em>{usuario}</em>
+        </li>
+        <li>
+            <strong class="codigo">passwd {usuario}</strong>
+            Cambiar contraseña del <em>{usuario}</em>
+        </li>
+        <li>
+            <strong class="codigo">usermod {usuario}</strong>
+            Cambiar opciones del <em>{usuario}</em>, ver 
+            <strong class="codigo">man usermod</strong>
+        </li>
+        <li>
+            <strong class="codigo">useradd {nombre}</strong>
+            Agregar <em>{usuario}</em>, se recomienda 
+            <strong class="codigo">adduser</strong> en su lugar
+        </li>
+        <li>
+            <strong class="codigo">userdel {usuario}</strong>
+            Borrar <em>{usuario}</em>, se recomienda <strong class="codigo">
+            deluser</strong> en su lugar
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 onclick="colapsar(this)">Procesos</h2>
+    <ul>
+        <li>
+            <strong class="codigo">top</strong>
+            Mostrar procesos
+        </li>
+        <li>
+            <strong class="codigo">ps -A</strong>
+            Mostrar procesos
+        </li>
+        <li>
+            <strong class="codigo">kill {num}</strong>
+            Matar proceso de numero <em>{num}</em>
+        </li>
+        <li>
+            <strong class="codigo">killall {proceso}</strong>
+            Matar a todos los procesos llamados <em>{proceso}</em>
+        </li>
+        <li>
+            <strong class="codigo">lsof</strong>
+            Lista de archivos abiertos por procesos. Usar con grep
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 onclick="colapsar(this)">Permisos</h2>
+    <ul>
+        <li>
+            <strong class="codigo">chmod {permisos} {archivo}</strong>
+            Cambiar los permisos de un archivo
+        </li>
+    </ul>
+    <p>
+        lectura (r) = 4</br>
+        escritura (w) = 2</br>
+        ejecutable (x) = 1
+    </p>
+    <p>
+        permiso de usuario (u) = r+w+x (ej: r+w+x = 7)</br>
+        permiso de grupo (g) = r+w+x (ej: r+x = 5)</br>
+        permiso de otros (o) = r+w+x (ej: x = 1)    
+    </p>
+    <p>
+        <em>{permisos}</em> = ugo (ej: 751)
+    </p>
+</section>
+
+<section>
+    <h2 onclick="colapsar(this)">Red</h2>
+    <em>{disp}</em> = Dispositivo de red (wlan0, eth0, etc.)
+    <ul>
+        <li>
+            <strong class="codigo">wget {URL}</strong>
+            Descargar el archivo presente en esa dirección. Será descargado
+            en la carpeta actual, usar <strong class="codigo">cd</strong>
+        </li>
+        <li>
+            <strong class="codigo">wget -c {URL}</strong>
+            Continuar una descarga interrumpida, ubicarse en la carpeta
+            correcta
+        </li>
+        <li>
+            <strong class="codigo">ifconfig [-a]</strong>
+            Info sobre red e IPs. Leer <strong class="codigo">man ifconfig
+            </strong> para configuraciones de red
+        </li>
+        <li>
+            <strong class="codigo">ifconfig [-a]</strong>
+            Info sobre red e IPs. Leer <strong class="codigo">man iwconfig
+            </strong> para configuraciones de red inalámbrica
+        </li>
+        <li>
+            <strong class="codigo">ping {IP}</strong>
+            Probar conexión con <em>{IP}</em>
+        </li>
+        <li>
+            <strong class="codigo">iwconfig {disp} rate {velocidad}</strong>
+            Configurar velocidad de <em>{disp}</em>. <em>{velocidad}</em> 
+            medida en bits, agregar <strong class="codigo">auto</strong> para 
+            permitir velocidades menores (ej: 2M auto). Leer 
+            <strong class="codigo">man iwconfig</strong>
+        </li>
+        <li>
+            <strong class="codigo">iwconfig {disp} frag {tamaño}</strong>
+            Configurar <em>{tamaño}</em> de los paquetes (ej: 512). Leer
+            <strong class="codigo">man iwconfig</strong>
+        </li>
+        <li>
+            <strong class="codigo">iwconfig {disp} rts 1</strong>
+            Activar RTS. Leer <strong class="codigo">man iwconfig</strong>
+        </li>
+        <li>
+            <strong class="codigo">iwconfig {disp} retry {numero}</strong>
+            Configurar <em>{numero}</em> máximo de reintentos. Leer 
+            <strong class="codigo">man iwconfig</strong>
+        </li>
+        <li>
+            <strong class="codigo">tcpdump -i {disp} ['port 80']</strong>
+            Flujo de paquetes en <em>{disp}</em> (ej: eth0; wlan0) 
+        </li>
+        <li>
+            <strong class="codigo">tar -cz {carpeta/archivo} | nc -q 10 -l -p {puerto}</strong>
+            Enviar archivos por red, espera para enviarle los archivos a una 
+            conexión entrante. Recursa carpetas por defecto. Como alternativa
+            ver <strong class="codigo">scp</strong>
+        </li>
+        <li>
+            <strong class="codigo">nc -w 10 {ip} {puerto} | tar -xz</strong>
+            Recibir los archivos que envía el comando anterior, los deja en la
+            carpeta actual
+        </li>
+    </ul>
+    <h2>Como configurar una red LAN con DHCP:</h2>
+    <p>
+        Asumiendo <strong class="codigo">eth0</strong>
+        como interfaz
+    </p>
+    <ol>
+        <li>
+            Editar <strong class="codigo">/etc/network/interfaces</strong>
+            <p class="archivo">
+                auto eth0</br>
+                iface eth0 inet dhcp
+            </p>
+        </li>
+        <li>
+            <strong class="codigo">sudo ifconfig eth0 up</strong>
+        </li>
+        <li>
+            <strong class="codigo">sudo /etc/init.d/networking restart</strong>
+        </li>
+    </ol>
+    <h2>Como configurar una red LAN de forma estatica:</h2>
+    <p>
+        Asumiendo <strong class="codigo">eth0</strong>
+        como interfaz y dando IPs de ejemplo
+    </p>
+    <ol>
+        <li>
+            Editar <strong class="codigo">/etc/network/interfaces</strong>
+            <p class="archivo">
+                auto eth0</br>
+                iface eth0 inet static</br>
+                address 192.168.0.101</br>
+                gateway 192.168.0.1</br>
+                netmask 255.255.255.0</br>
+                network 192.168.0.0</br>
+                broadcast 192.168.0.255
+            </p>
+        </li>
+        <li>
+            Editar <strong class="codigo">/etc/resolv.conf</strong>
+            <p class="archivo">
+                nameserver 208.67.222.222</br>
+                nameserver 208.67.220.220
+            </p>
+            IPs de <em>OpenDNS</em> como ejemplo
+        </li>
+        <li>
+            <strong class="codigo">sudo ifconfig eth0 up</strong>
+        </li>
+        <li>
+            <strong class="codigo">sudo /etc/init.d/networking restart</strong>
+        </li>
+    </ol>
+</section>
+
+<section>
+    <h2 onclick="colapsar(this)">SSH</h2>
+    <ul>
+        <li>
+            <strong class="codigo">ssh -p {puerto} {usuario}@{ip} [comando]
+                </strong>
+            Conectarse, si no se escribe <em>[comando]</em> se comienza a 
+            controlar la PC remota
+        </li>
+        <li>
+            <strong class="codigo">exit</strong>
+            Terminar de controlar PC remota
+        </li>
+        <li>
+            <strong class="codigo">scp -P {puerto} {usuario}@{ip}:{archivo} 
+                {archivodestino}</strong>
+            Copiar <em>{archivo}</em> remoto a <em>{archivodestino}</em>
+        </li>
+        <li>
+            <strong class="codigo">scp -P {puerto} {archivo} 
+                {usuario}@{ip}:{archivodestino}</strong>
+            Copiar <em>{archivo}</em> a <em>{archivodestino}</em> en PC remota
+        </li>
+        <li>
+            <strong class="codigo">ssh-keygen [-t rsa -b 4096 -C {mail}]
+            </strong> Generar claves para inicio de sesion, despues hay que 
+            poner la clave publica en el servidor en 
+            <strong class="codigo">~/.ssh/authorized_keys</strong>
+        </li>
+    </ul>
+    <p>
+    En <strong class="codigo">scp</strong>, con el argumento -r se pueden 
+    copiar carpetas.</br>
+    Si no se puede hacer <strong class="codigo">scp</strong> quitar mensaje 
+    de bienvenida (en .bashrc) en PC 
+    remota
+    </p>
+</section>
+<section>
+    <h2 onclick="colapsar(this)">Git</h2>
+    <p>
+        Asumiendo <strong class="codigo">origin</strong> como repositorio
+        remoto y <strong class="codigo">master</strong> como rama, porque
+        es lo que se usa casi siempre
+    </p>
+    <p>
+        Las <strong class="codigo">{URL}</strong> para 
+        <strong class="codigo">SSH</strong> se escriben
+        <strong class="codigo">ssh://{usuario}@{ip}:{puerto}/{repositorio}</strong>
+        En donde <strong class="codigo">{repositorio}</strong> es una dirección
+        como <strong class="codigo">/~/repo.git</strong>
+    </p>
+    <ul>
+        <li>
+            <strong class="codigo">git clone {URL}</strong> Descarga y
+            un repositorio en el directorio actual
+        </li>
+        <li>
+            <strong class="codigo">git init</strong> Crea un repositorio
+            (ubicarse dentro de la carpeta con <strong class="codigo">
+            cd</strong>)
+        </li>
+        <li>
+            <strong class="codigo">git status</strong> Ver estado del
+            repositorio
+        </li>
+        <li>
+            <strong class="codigo">git add .</strong> Agregar todos los
+            archivos modificados
+        </li>
+        <li>
+            <strong class="codigo">git commit [-a] [-m "{mensaje}"]</strong> 
+            Guardar cambios con un <em>{mensaje}</em> opcional. Con
+            <strong class="codigo">-a</strong> ademas agrega todos los 
+            archivos modificados al commit
+        </li>
+        <li>
+            <strong class="codigo">git log</strong> Ver historial
+        </li>
+        <li>
+            <strong class="codigo">git checkout -- {archivo/carpeta}</strong> 
+            Restaurar archivo a como estaba en el commit anterior, cuidado, 
+            los cambios se pierden
+        </li>
+        <li>
+            <strong class="codigo">git remote -v</strong> Ver 
+            <strong class="codigo">URLs</strong> de los remotos
+        </li>
+        <li>
+            <strong class="codigo">git remote set-url origin {URL}</strong> 
+            Cambiar dirección del remoto
+        </li>
+    </ul>
+    <p>
+    Con el argumento -r se pueden copiar carpetas.</br>
+    Si no se puede hacer scp quitar mensaje de bienvenida (en .bashrc) en PC 
+    remota
+    </p>
+</section>
+        <!-- Fin de contenido -->
+        </main>
+        <footer>
+        Mgbu - <a href="http://gnulinuxvagos.es/">GNU/Linux Vagos</a>
+        </footer>
+    </body>
+</html>
