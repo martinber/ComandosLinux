@@ -7,6 +7,6 @@ Hice la guía en HTML porque es cómodo guardarla en el celular y abrirla localm
 
 Para descargar pueden usar "Download ZIP"
 
-Para mirar la guía online vayan a martinber.github.io/ComandosLinux (Con mayusculas!)
+Para mirar la guía online vayan a http://martinber.github.io/ComandosLinux (Con mayusculas!)
 
 Pueden descargarlo, modificarlo, lo que quieran
